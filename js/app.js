@@ -4,7 +4,7 @@ $(function(){
 		var userInput = $("#troll").val();
 		getResults(userInput);
 		$("#troll").val("");
-		$("#thumbnails").empty();
+		// $("#thumbnails").empty();
 	});
 });
 
