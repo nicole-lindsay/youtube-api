@@ -8,6 +8,21 @@ $(function() {
     });
 
     $(".fancybox").fancybox();
+
+    $('.fancybox-media')
+        .attr('rel', 'media-gallery')
+        .fancybox({
+            openEffect: 'none',
+            closeEffect: 'none',
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            arrows: false,
+            helpers: {
+                media: {},
+                buttons: {}
+            }
+        });
 });
 
 function getResults(userInput) {
@@ -30,7 +45,7 @@ function showResults(results) {
         console.log(value);
         fillEmptyDiv += "<li>"
         fillEmptyDiv += "<p>" + value.snippet.title + "</p>";
-        fillEmptyDiv += "<a class='fancybox.iframe' rel='group' href='http://www.youtube.com/embed/" + value.id.videoId + "'>";
+        fillEmptyDiv += "<a class='fancybox-media' rel='group' href='http://www.youtube.com/watch?v=" + value.id.videoId + "'>";
         fillEmptyDiv += "<img src='" + value.snippet.thumbnails.medium.url + "'/>";
         fillEmptyDiv += "</a>"
         fillEmptyDiv += "</li>"
